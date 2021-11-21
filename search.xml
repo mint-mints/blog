@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Linux中Argument list too long解决方法</title>
+    <url>/blog/2021/11/16/Linux%E4%B8%ADArgument-list-too-long%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</url>
+    <content><![CDATA[<h1 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h1><p>Linux下使用<code>cp，mv，rm</code>等命令时经常会碰到“Argument list too long”错误，这主要是因为这些命令的参数太长，即文件个数过多。</p>
+<span id="more"></span>
+
+<h1 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h1><h3 id="解决方法1："><a href="#解决方法1：" class="headerlink" title="解决方法1："></a>解决方法1：</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">find <span class="built_in">test</span>/ -name <span class="string">&quot;*.jpg&quot;</span> | xargs -i cp &#123;&#125; train</span><br></pre></td></tr></table></figure>
+
+<p><code>find test/ -name &quot;*.jpg&quot;</code>是指在<code>test</code>文件夹下查找名为<code>*.jpg</code>的文件。</p>
+<p><code>xargs</code>命令是给其他命令传递参数的一个过滤器，也是组合多个命令的一个工具。<code>-i</code>会将<code>xargs</code>的内容赋值给<code>&#123;&#125;</code>。</p>
+<h3 id="解决方法2："><a href="#解决方法2：" class="headerlink" title="解决方法2："></a>解决方法2：</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">find <span class="built_in">test</span>/ -name <span class="string">&quot;*.jpg&quot;</span> -<span class="built_in">exec</span> cp &#123;&#125; train \\;</span><br></pre></td></tr></table></figure>
+
+<p><code>-exec</code>参数后面是指执行其后面的命令，<code>-exec</code>以<code>;</code>为结尾，由于各个系统中分号的意义不同，因此用<code>\\</code>进行转义，即<code>\\;</code>，<code>&#123;&#125;</code>会被<code>find</code>find命令的结果替换。</p>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>Error Record</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>conda安装tensorflow报错：PackagesNotFoundError</title>
+    <url>/blog/2021/11/16/conda%E5%AE%89%E8%A3%85tensorflow%E6%8A%A5%E9%94%99%EF%BC%9APackagesNotFoundError/</url>
+    <content><![CDATA[<h1 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h1><p>conda安装tensorflow报错：PackagesNotFoundError: The following packages are not available from current channels。</p>
+<span id="more"></span>
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda install ‐‐channel https://conda.anaconda.org/anaconda tensorflow‐gpu=1.9.0</span><br><span class="line">Collecting package metadata (current_repodata.json): <span class="keyword">done</span></span><br><span class="line">Solving environment: failed with current_repodata.json, will retry with next repodata <span class="built_in">source</span>.</span><br><span class="line">Collecting package metadata (repodata.json): <span class="keyword">done</span></span><br><span class="line">Solving environment: failed</span><br><span class="line">PackagesNotFoundError: The following packages are not available from current channels:</span><br><span class="line"></span><br><span class="line">  - tensorflow‐gpu=1.1.0</span><br><span class="line">  - ‐‐channel</span><br><span class="line">  - //conda.anaconda.org/anaconda</span><br><span class="line"></span><br><span class="line">Current channels:</span><br><span class="line">  - https://repo.anaconda.com/pkgs/main/linux-64</span><br><span class="line">  - https://repo.anaconda.com/pkgs/main/noarch</span><br><span class="line">  - https://repo.anaconda.com/pkgs/r/linux-64</span><br><span class="line">  - https://repo.anaconda.com/pkgs/r/noarch</span><br><span class="line"></span><br><span class="line">To search <span class="keyword">for</span> alternate channels that may provide the conda package you<span class="string">&#x27;re looking for, navigate to   https://anaconda.org  and use the search bar at the top of the page.</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h1><p>更换为pip安装</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip install tensorflow-gpu==1.1.0</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>DeepLearning</category>
+      </categories>
+      <tags>
+        <tag>DeepLearning</tag>
+        <tag>TensorFlow</tag>
+        <tag>Error Record</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>linux中cp：omitting directory `XXX&#39; 问题解决</title>
+    <url>/blog/2021/11/19/linux%E4%B8%ADcp%EF%BC%9Aomitting_directory_%60XXX&#39;_%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/</url>
+    <content><![CDATA[<h1 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h1><p>在linux系统中复制文件夹时提示如下：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">cp: omitting directory `XXX<span class="string">&#x27; </span></span><br></pre></td></tr></table></figure>
+
+<p>XXX是要复制的文件夹名，出现该警告的原因是因为XXX目录下<strong>还存在文件</strong>，所以不能直接拷贝。</p>
+<span id="more"></span>
+
+<h1 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h1><p>解决办法：使用递归拷贝，在cp命令后面加上-r参数，如：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">cp -r XXX <span class="built_in">test</span></span><br></pre></td></tr></table></figure>
+
+<p>这里的 -r 代表递归的意思。</p>
+<p>同样，当我们在linux系统下删除目录时也需要加上-r参数 ，如果目录为空，则会直接删除，如果目录非空，则会级联删除。</p>
+<p>如删除XXX文件夹：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">rm -rf XXX</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>Error Record</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ubuntu切换cuda版本但nvcc显示不正确的解决办法</title>
+    <url>/blog/2021/11/19/ubuntu%E5%88%87%E6%8D%A2cuda%E7%89%88%E6%9C%AC%E4%BD%86nvcc%E6%98%BE%E7%A4%BA%E4%B8%8D%E6%AD%A3%E7%A1%AE%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</url>
+    <content><![CDATA[<ol>
+<li>在~/.bashrc 中修改好如下内容：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">export</span> PATH=<span class="string">&quot;<span class="variable">$PATH</span>:/usr/local/cuda/bin&quot;</span></span><br><span class="line"><span class="built_in">export</span> LD_LIBRARY_PATH=<span class="string">&quot;<span class="variable">$LD_LIBRARY_PATH</span>:/usr/local/cuda/lib64&quot;</span></span><br><span class="line"><span class="built_in">export</span> LIBRARY_PATH=<span class="string">&quot;<span class="variable">$LIBRARY_PATH</span>:/usr/local/cuda/lib64</span></span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
+
+<p>并且完成软链接切换</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">rm -rf /usr/<span class="built_in">local</span>/cuda      <span class="comment">#删除之前创建的软链接</span></span><br><span class="line">sudo ln -s /usr/<span class="built_in">local</span>/cuda-8.0 /usr/<span class="built_in">local</span>/cuda</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>加载更新后的配置</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo -s</span><br><span class="line"><span class="built_in">source</span> ~/.bashrc</span><br></pre></td></tr></table></figure>
+
+<p>注：此处直接使用source后，未成功更新。若使用sudo source ~/.bashrc会报错：sudo: source: command not found</p>
+<ol start="3">
+<li><p>使用nvcc -V查看版本，仍不起效</p>
+<p>使用which nvcc，出现 /usr/local/cuda-9.0/bin/nvcc</p>
+</li>
+<li><p>果断在.bashrc中增加nvcc的环境目录</p>
+</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">export</span> PATH=<span class="string">&quot;<span class="variable">$PATH</span>:/usr/local/cuda/bin/nvcc&quot;</span></span><br></pre></td></tr></table></figure>
+
+<ol start="5">
+<li>再次source更新，搞定！</li>
+</ol>
+]]></content>
+      <categories>
+        <category>DeepLearning</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>DeepLearning</tag>
+        <tag>Error Record</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ImportError：libcublas.so.8.0：cannot open shared object file</title>
+    <url>/blog/2021/11/19/ImportError%EF%BC%9Alibcublas.so.8.0_cannot_open_shared_object_file/</url>
+    <content><![CDATA[<h1 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h1><p>报错如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ImportError: libcublas.so.8.0: cannot open shared object file: No such file or directory</span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
+
+<h1 id="原因分析"><a href="#原因分析" class="headerlink" title="原因分析"></a>原因分析</h1><p>tensorflow和已安装的cuda版本不匹配</p>
+<h1 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h1><h2 id="1-查看已安装cuda版本"><a href="#1-查看已安装cuda版本" class="headerlink" title="1. 查看已安装cuda版本"></a>1. 查看已安装cuda版本</h2><p>有三种方法可以查看：</p>
+<p>（1）输入命令查看版本信息</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">nvcc -V</span><br></pre></td></tr></table></figure>
+
+<p>（2）输命令查看</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ll /usr/<span class="built_in">local</span>/cuda*</span><br></pre></td></tr></table></figure>
+
+<p>（3）进入/usr/local/cuda文件夹下打开version.txt，查看版本信息。</p>
+<h2 id="2-查看cuda和tensorflow的版本对应关系"><a href="#2-查看cuda和tensorflow的版本对应关系" class="headerlink" title="2. 查看cuda和tensorflow的版本对应关系"></a>2. 查看cuda和tensorflow的版本对应关系</h2><p>官网上有对应的说明：<a href="https://tensorflow.google.cn/install/source#linux">https://tensorflow.google.cn/install/source#linux</a></p>
+<h2 id="3-安装并切换对应版本的cuda"><a href="#3-安装并切换对应版本的cuda" class="headerlink" title="3. 安装并切换对应版本的cuda"></a>3. 安装并切换对应版本的cuda</h2>]]></content>
+      <categories>
+        <category>DeepLearning</category>
+      </categories>
+      <tags>
+        <tag>DeepLearning</tag>
+        <tag>Error Record</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>更换cuda版本后Pychram中的terminal依旧显示旧版本问题</title>
+    <url>/blog/2021/11/19/%E6%9B%B4%E6%8D%A2cuda%E7%89%88%E6%9C%AC%E5%90%8EPychram%E4%B8%AD%E7%9A%84terminal%E4%BE%9D%E6%97%A7%E6%98%BE%E7%A4%BA%E6%97%A7%E7%89%88%E6%9C%AC%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<h1 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h1><p>更换cuda8.0版本，在系统的terminal中显示正常，输入nvcc -V后输出正常：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ nvcc -V</span><br><span class="line">nvcc: NVIDIA (R) Cuda compiler driver</span><br><span class="line">Copyright (c) 2005-2016 NVIDIA Corporation</span><br><span class="line">Built on Tue_Jan_10_13:22:03_CST_2017</span><br><span class="line">Cuda compilation tools, release 8.0, V8.0.61</span><br></pre></td></tr></table></figure>
+
+<p>但是在pycharm的terminal中的输出还是旧版本9.0。</p>
+<span id="more"></span>
+
+<h1 id="原因分析"><a href="#原因分析" class="headerlink" title="原因分析"></a>原因分析</h1><p><img src="E:\Docs\Blog\blog\source_posts\imgs\Screenshot_from_2021-08-09_15-26-12.png" alt="Screenshot_from_2021-08-09_15-26-12"></p>
+<p>查看pycharm的设置，Terminal的设置中环境变量的属性。</p>
+<p>发现系统环境变量中的PATH中，包含/usr/local/cuda-9.0/bin</p>
+<p>可是在更换cuda版本时，已经将.bashrc中的cuda-9.0全部改为cuda，且在系统的Terminal中测试成功。</p>
+<p>最后找到了是在/etc/profile中，有以下两句（哦，要命）</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">export</span>  PATH=/usr/<span class="built_in">local</span>/cuda-9.0/bin:<span class="variable">$PATH</span>　　　　</span><br><span class="line"><span class="built_in">export</span>  LD_LIBRARY_PATH=/usr/<span class="built_in">local</span>/cuda-9.0/lib64<span class="variable">$LD_LIBRARY_PATH</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h1><p>将/etc/profile中配置环境变量的两句直接删除了。</p>
+<p>但是重新source更新时，报错：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">X Error of failed request: BadName (named color or font does not exist)</span><br><span class="line">Major opcode of failed request: 140 (RANDR)</span><br><span class="line">Minor opcode of failed request: 16 (RRCreateMode)</span><br><span class="line">Serial number of failed request: 35</span><br><span class="line">Current serial number <span class="keyword">in</span> output stream: 35</span><br></pre></td></tr></table></figure>
+
+<p>原因是/etc/profile中包含设置分辨率的两个语句</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo xrandr --newmode <span class="string">&quot;1920x1080_60.00&quot;</span> 173.00 1920 2048 2248 2576 1080 1083 1088 1120 -hsync +vsync</span><br><span class="line">sudo xrandr --addmode VGA-1 <span class="string">&quot;1920x1080_60.00&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>在开机时就加载过两个语句，现在重新加载就重名了。</p>
+<p>于是选择了重启 ⇒ 成功！</p>
+]]></content>
+      <categories>
+        <category>DeepLearning</category>
+      </categories>
+      <tags>
+        <tag>DeepLearning</tag>
+        <tag>Error Record</tag>
+      </tags>
+  </entry>
+</search>

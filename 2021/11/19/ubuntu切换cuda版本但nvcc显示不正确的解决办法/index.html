@@ -22,16 +22,22 @@
     var CONFIG = {"hostname":"mint-mints.github.io","root":"/blog/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="山楂与薄荷">
-<meta property="og:url" content="https://mint-mints.github.io/blog/archives/2021/index.html">
+  <meta name="description" content="在~&#x2F;.bashrc 中修改好如下内容：  123export PATH&#x3D;&quot;$PATH:&#x2F;usr&#x2F;local&#x2F;cuda&#x2F;bin&quot;export LD_LIBRARY_PATH&#x3D;&quot;$LD_LIBRARY_PATH:&#x2F;usr&#x2F;local&#x2F;cuda&#x2F;lib64&quot;export LIBRARY_PATH&#x3D;&quot;$LIBRARY_PATH:&#x2F;usr&#x2F;local&#x2F;c">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ubuntu切换cuda版本但nvcc显示不正确的解决办法">
+<meta property="og:url" content="https://mint-mints.github.io/blog/2021/11/19/ubuntu%E5%88%87%E6%8D%A2cuda%E7%89%88%E6%9C%AC%E4%BD%86nvcc%E6%98%BE%E7%A4%BA%E4%B8%8D%E6%AD%A3%E7%A1%AE%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/index.html">
 <meta property="og:site_name" content="山楂与薄荷">
+<meta property="og:description" content="在~&#x2F;.bashrc 中修改好如下内容：  123export PATH&#x3D;&quot;$PATH:&#x2F;usr&#x2F;local&#x2F;cuda&#x2F;bin&quot;export LD_LIBRARY_PATH&#x3D;&quot;$LD_LIBRARY_PATH:&#x2F;usr&#x2F;local&#x2F;cuda&#x2F;lib64&quot;export LIBRARY_PATH&#x3D;&quot;$LIBRARY_PATH:&#x2F;usr&#x2F;local&#x2F;c">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-11-19T09:29:14.000Z">
+<meta property="article:modified_time" content="2021-11-19T09:34:48.882Z">
 <meta property="article:author" content="mint-mints">
-<meta property="article:tag" content="keywords">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="DeepLearning">
+<meta property="article:tag" content="Error Record">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://mint-mints.github.io/blog/archives/2021/">
+<link rel="canonical" href="https://mint-mints.github.io/blog/2021/11/19/ubuntu%E5%88%87%E6%8D%A2cuda%E7%89%88%E6%9C%AC%E4%BD%86nvcc%E6%98%BE%E7%A4%BA%E4%B8%8D%E6%AD%A3%E7%A1%AE%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/">
 
 
 <script id="page-configurations">
@@ -39,12 +45,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>归档 | 山楂与薄荷</title>
+  <title>ubuntu切换cuda版本但nvcc显示不正确的解决办法 | 山楂与薄荷</title>
   
 
 
@@ -182,150 +188,121 @@
         <div class="content-wrap">
           
 
-          <div class="content archive">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <span class="collection-header">嗯..! 目前共计 6 篇日志。 继续努力。</span>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://mint-mints.github.io/blog/2021/11/19/ubuntu%E5%88%87%E6%8D%A2cuda%E7%89%88%E6%9C%AC%E4%BD%86nvcc%E6%98%BE%E7%A4%BA%E4%B8%8D%E6%AD%A3%E7%A1%AE%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="mint-mints">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="山楂与薄荷">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          ubuntu切换cuda版本但nvcc显示不正确的解决办法
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-11-19 17:29:14 / 修改时间：17:34:48" itemprop="dateCreated datePublished" datetime="2021-11-19T17:29:14+08:00">2021-11-19</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/DeepLearning/" itemprop="url" rel="index"><span itemprop="name">DeepLearning</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2021</span>
-    </div>
+        <ol>
+<li>在~/.bashrc 中修改好如下内容：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> PATH=<span class="string">&quot;<span class="variable">$PATH</span>:/usr/local/cuda/bin&quot;</span></span><br><span class="line"><span class="built_in">export</span> LD_LIBRARY_PATH=<span class="string">&quot;<span class="variable">$LD_LIBRARY_PATH</span>:/usr/local/cuda/lib64&quot;</span></span><br><span class="line"><span class="built_in">export</span> LIBRARY_PATH=<span class="string">&quot;<span class="variable">$LIBRARY_PATH</span>:/usr/local/cuda/lib64</span></span><br></pre></td></tr></table></figure>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+<span id="more"></span>
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-11-19T17:39:30+08:00"
-              content="2021-11-19">
-          11-19
-        </time>
-      </div>
+<p>并且完成软链接切换</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rm -rf /usr/<span class="built_in">local</span>/cuda      <span class="comment">#删除之前创建的软链接</span></span><br><span class="line">sudo ln -s /usr/<span class="built_in">local</span>/cuda-8.0 /usr/<span class="built_in">local</span>/cuda</span><br></pre></td></tr></table></figure>
 
-      <div class="post-title">
-          <a class="post-title-link" href="/blog/2021/11/19/%E6%9B%B4%E6%8D%A2cuda%E7%89%88%E6%9C%AC%E5%90%8EPychram%E4%B8%AD%E7%9A%84terminal%E4%BE%9D%E6%97%A7%E6%98%BE%E7%A4%BA%E6%97%A7%E7%89%88%E6%9C%AC%E9%97%AE%E9%A2%98/" itemprop="url">
-            <span itemprop="name">更换cuda版本后Pychram中的terminal依旧显示旧版本问题</span>
-          </a>
-      </div>
+<ol start="2">
+<li>加载更新后的配置</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo -s</span><br><span class="line"><span class="built_in">source</span> ~/.bashrc</span><br></pre></td></tr></table></figure>
 
-    </header>
-  </article>
+<p>注：此处直接使用source后，未成功更新。若使用sudo source ~/.bashrc会报错：sudo: source: command not found</p>
+<ol start="3">
+<li><p>使用nvcc -V查看版本，仍不起效</p>
+<p>使用which nvcc，出现 /usr/local/cuda-9.0/bin/nvcc</p>
+</li>
+<li><p>果断在.bashrc中增加nvcc的环境目录</p>
+</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> PATH=<span class="string">&quot;<span class="variable">$PATH</span>:/usr/local/cuda/bin/nvcc&quot;</span></span><br></pre></td></tr></table></figure>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-11-19T17:31:43+08:00"
-              content="2021-11-19">
-          11-19
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/blog/2021/11/19/linux%E4%B8%ADcp%EF%BC%9Aomitting_directory_%60XXX'_%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/" itemprop="url">
-            <span itemprop="name">linux中cp：omitting directory `XXX' 问题解决</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-11-19T17:29:14+08:00"
-              content="2021-11-19">
-          11-19
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/blog/2021/11/19/ubuntu%E5%88%87%E6%8D%A2cuda%E7%89%88%E6%9C%AC%E4%BD%86nvcc%E6%98%BE%E7%A4%BA%E4%B8%8D%E6%AD%A3%E7%A1%AE%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/" itemprop="url">
-            <span itemprop="name">ubuntu切换cuda版本但nvcc显示不正确的解决办法</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-11-19T17:18:43+08:00"
-              content="2021-11-19">
-          11-19
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/blog/2021/11/19/ImportError%EF%BC%9Alibcublas.so.8.0_cannot_open_shared_object_file/" itemprop="url">
-            <span itemprop="name">ImportError：libcublas.so.8.0：cannot open shared object file</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-11-16T17:11:14+08:00"
-              content="2021-11-16">
-          11-16
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/blog/2021/11/16/conda%E5%AE%89%E8%A3%85tensorflow%E6%8A%A5%E9%94%99%EF%BC%9APackagesNotFoundError/" itemprop="url">
-            <span itemprop="name">conda安装tensorflow报错：PackagesNotFoundError</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-11-16T16:56:24+08:00"
-              content="2021-11-16">
-          11-16
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/blog/2021/11/16/Linux%E4%B8%ADArgument-list-too-long%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/" itemprop="url">
-            <span itemprop="name">Linux中Argument list too long解决方法</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
+<ol start="5">
+<li>再次source更新，搞定！</li>
+</ol>
 
     </div>
-  </div>
-  
-  
-  
 
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/blog/tags/Linux/" rel="tag"># Linux</a>
+              <a href="/blog/tags/DeepLearning/" rel="tag"># DeepLearning</a>
+              <a href="/blog/tags/Error-Record/" rel="tag"># Error Record</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/blog/2021/11/19/ImportError%EF%BC%9Alibcublas.so.8.0_cannot_open_shared_object_file/" rel="prev" title="ImportError：libcublas.so.8.0：cannot open shared object file">
+      <i class="fa fa-chevron-left"></i> ImportError：libcublas.so.8.0：cannot open shared object file
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/blog/2021/11/19/linux%E4%B8%ADcp%EF%BC%9Aomitting_directory_%60XXX'_%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/" rel="next" title="linux中cp：omitting directory `XXX' 问题解决">
+      linux中cp：omitting directory `XXX' 问题解决 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
   
 
 
