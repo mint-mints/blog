@@ -1193,7 +1193,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #edecff;
+  background: #780890;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2321,6 +2321,9 @@ embed {
 }
 .brand {
   background: var(--btn-default-bg);
+}
+.header {
+  background: url("../images/background.jpg");
 }
 @media (max-width: 767px) {
   .site-nav {

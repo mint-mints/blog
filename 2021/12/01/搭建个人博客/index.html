@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon.ico">
+  <link rel="mask-icon" href="/blog/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/blog/css/main.css">
+
+
+<link rel="stylesheet" href="/blog/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/blog/lib/pace/pace-theme-minimal.min.css">
+  <script src="/blog/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"mint-mints.github.io","root":"/blog/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="搭建个人博客博客搭建 在github上搭建个人博客   新建一个库，库名称为：用户名.github.io。  settings里找到GitHub pages设置页面。 选择Source分支及主题。  正常情况下已经可以在用户名.github.io上访问博客页面了。  若仓库名不是用户名.github.io，则github pages对应的网址为：用户名.github.io&#x2F;仓库名 如仓库名为blo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="搭建个人博客">
+<meta property="og:url" content="https://mint-mints.github.io/blog/2021/12/01/%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/index.html">
+<meta property="og:site_name" content="山楂与薄荷">
+<meta property="og:description" content="搭建个人博客博客搭建 在github上搭建个人博客   新建一个库，库名称为：用户名.github.io。  settings里找到GitHub pages设置页面。 选择Source分支及主题。  正常情况下已经可以在用户名.github.io上访问博客页面了。  若仓库名不是用户名.github.io，则github pages对应的网址为：用户名.github.io&#x2F;仓库名 如仓库名为blo">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-12-01T09:05:03.000Z">
+<meta property="article:modified_time" content="2021-12-01T09:17:11.405Z">
+<meta property="article:author" content="mint-mints">
+<meta property="article:tag" content="Hexo">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://mint-mints.github.io/blog/2021/12/01/%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>搭建个人博客 | 山楂与薄荷</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/blog/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">山楂与薄荷</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/blog/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://mint-mints.github.io/blog/2021/12/01/%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="mint-mints">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="山楂与薄荷">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          搭建个人博客
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-12-01 17:05:03 / 修改时间：17:17:11" itemprop="dateCreated datePublished" datetime="2021-12-01T17:05:03+08:00">2021-12-01</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/blog/" itemprop="url" rel="index"><span itemprop="name">blog</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="搭建个人博客"><a href="#搭建个人博客" class="headerlink" title="搭建个人博客"></a>搭建个人博客</h1><h2 id="博客搭建"><a href="#博客搭建" class="headerlink" title="博客搭建"></a>博客搭建</h2><blockquote>
+<p>在github上搭建个人博客</p>
+</blockquote>
+<ol>
+<li><p>新建一个库，库名称为：<code>用户名.github.io</code>。</p>
+</li>
+<li><p>settings里找到GitHub pages设置页面。</p>
+<p>选择Source分支及主题。</p>
+</li>
+<li><p>正常情况下已经可以在<code>用户名.github.io</code>上访问博客页面了。</p>
+<ul>
+<li><p>若仓库名不是<code>用户名.github.io</code>，则github pages对应的网址为：<code>用户名.github.io/仓库名</code></p>
+<p>如仓库名为<code>blog</code>，则网址为<code>用户名.github.io/blog</code></p>
+</li>
+</ul>
+</li>
+</ol>
+<span id="more"></span>
+
+<h2 id="页面优化"><a href="#页面优化" class="headerlink" title="页面优化"></a>页面优化</h2><h3 id="HomePage主题"><a href="#HomePage主题" class="headerlink" title="HomePage主题"></a>HomePage主题</h3><blockquote>
+<p>使用了Tomotoes-HomePage <a target="_blank" rel="noopener" href="https://github.com/Tomotoes/HomePage">https://github.com/Tomotoes/HomePage</a></p>
+</blockquote>
+<h4 id="博客搭建-1"><a href="#博客搭建-1" class="headerlink" title="博客搭建"></a>博客搭建</h4><ol>
+<li><p>环境要求</p>
+<ul>
+<li>Nodejs 6.0以上</li>
+<li>Git</li>
+</ul>
+</li>
+<li><p>安装</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git clone https:<span class="comment">//github.com/Tomotoes/HomePage.git</span></span><br><span class="line">cd HomePage</span><br><span class="line">npm install     <span class="comment">//将package.json中的依赖装到node_modules</span></span><br><span class="line">npm run dev</span><br></pre></td></tr></table></figure></li>
+<li><p>部署</p>
+<p>在根目录下执行<code>npm run build</code> 后，会将项目文件生成到 <code>dist</code> 目录。</p>
+<p>然后，你可以将<code>dist</code>目录部署到你喜欢的服务器托管商。</p>
+<p>下面以<code>GithubPage</code> 举例：</p>
+<p>1）新建<code>用户名.github.io</code>仓库，并设置好<code>GithubPage</code>选项</p>
+<p>2）将<code>dist</code>目录部署到<code>GithubPage</code>上</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">cd dist</span><br><span class="line">git init </span><br><span class="line">git add -A</span><br><span class="line">git commit -am&quot;init&quot;</span><br><span class="line">git remote add origin https://github.com/用户名/用户名.github.io.git</span><br><span class="line">git push -f origin master</span><br></pre></td></tr></table></figure>
+
+<p>3）访问<code>用户名.github.io</code>就可以浏览了</p>
+</li>
+</ol>
+<ul>
+<li><p>报错处理</p>
+<ol>
+<li><p>npm install报错</p>
+<p>Python版本换成2.7之后解决。</p>
+</li>
+<li><p>npm install安装报错</p>
+</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">Downloading binary from https:<span class="comment">//github.com/sass/node-sass/releases/download/v4.14.1/win32-x64-64_binding.node</span></span><br><span class="line">Cannot download <span class="string">&quot;https://github.com/sass/node-sass/releases/download/v4.14.1/win32-x64-64_binding.node&quot;</span>:</span><br><span class="line"></span><br><span class="line">read ECONNRESET</span><br><span class="line"></span><br><span class="line">Hint: If github.com is <span class="keyword">not</span> accessible in your location</span><br><span class="line">      <span class="keyword">try</span> setting a proxy via HTTP_PROXY, e.g.</span><br><span class="line"></span><br><span class="line">      <span class="keyword">export</span> HTTP_PROXY=http:<span class="comment">//example.com:1234</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">or</span> configure npm proxy via</span><br><span class="line"></span><br><span class="line">      npm config <span class="built_in">set</span> proxy http:<span class="comment">//example.com:8080</span></span><br><span class="line"></span><br><span class="line">&gt; node-sass@<span class="number">4.14</span><span class="number">.1</span> postinstall E:\Blog\HomePage\node_modules\node-sass</span><br><span class="line">&gt; node scripts/build.js</span><br><span class="line"></span><br><span class="line">Building: F:\nodejs\node.exe E:\Blog\HomePage\node_modules\node-gyp\bin\node-gyp.js rebuild --verbose --libsass_ext= --libsass_cflags= --libsass_ldflags= --libsass_library=</span><br><span class="line">gyp info it worked <span class="keyword">if</span> it ends with ok</span><br><span class="line">...</span><br><span class="line">gyp ERR! configure error</span><br><span class="line">gyp ERR! <span class="built_in">stack</span> Error: read ECONNRESET</span><br><span class="line">gyp ERR! <span class="built_in">stack</span>     at TLSWrap.onStreamRead (internal/stream_base_commons.js:<span class="number">111</span>:<span class="number">27</span>)</span><br><span class="line">gyp ERR! System Windows_NT <span class="number">10.0</span><span class="number">.18363</span></span><br><span class="line">gyp ERR! command <span class="string">&quot;F:\\nodejs\\node.exe&quot;</span> <span class="string">&quot;E:\\Blog\\HomePage\\node_modules\\node-gyp\\bin\\node-gyp.js&quot;</span> <span class="string">&quot;rebuild&quot;</span> <span class="string">&quot;--verbose&quot;</span> <span class="string">&quot;--libsass_ext=&quot;</span> <span class="string">&quot;--libsass_cflags=&quot;</span> <span class="string">&quot;--libsass_ldflags=&quot;</span> <span class="string">&quot;--libsass_library=&quot;</span></span><br><span class="line">gyp ERR! cwd E:\Blog\HomePage\node_modules\node-sass</span><br><span class="line">gyp ERR! node -v v10<span class="number">.12</span><span class="number">.0</span></span><br><span class="line">gyp ERR! node-gyp -v v3<span class="number">.8</span><span class="number">.0</span></span><br><span class="line">gyp ERR! <span class="keyword">not</span> ok</span><br><span class="line">Build failed with error code: <span class="number">1</span></span><br><span class="line">npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@^<span class="number">1.2</span><span class="number">.7</span> (node_modules\chokidar\node_modules\fsevents):</span><br><span class="line">npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform <span class="keyword">for</span> fsevents@<span class="number">1.2</span><span class="number">.13</span>: wanted &#123;<span class="string">&quot;os&quot;</span>:<span class="string">&quot;darwin&quot;</span>,<span class="string">&quot;arch&quot;</span>:<span class="string">&quot;any&quot;</span>&#125; (current: &#123;<span class="string">&quot;os&quot;</span>:<span class="string">&quot;win32&quot;</span>,<span class="string">&quot;arch&quot;</span>:<span class="string">&quot;x64&quot;</span>&#125;)</span><br><span class="line">npm WARN tomotoes-home-page@<span class="number">1.0</span><span class="number">.0</span> license should be a valid SPDX license expression</span><br><span class="line"></span><br><span class="line">npm ERR! code ELIFECYCLE</span><br><span class="line">npm ERR! errno <span class="number">1</span></span><br><span class="line">npm ERR! node-sass@<span class="number">4.14</span><span class="number">.1</span> postinstall: `node scripts/build.js`</span><br><span class="line">npm ERR! Exit status <span class="number">1</span></span><br><span class="line">npm ERR!</span><br><span class="line">npm ERR! Failed at the node-sass@<span class="number">4.14</span><span class="number">.1</span> postinstall script.</span><br><span class="line">npm ERR! This is probably <span class="keyword">not</span> a problem with npm. There is likely additional logging output above.</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://github.com/sass/node-sass/releases/download/v4.14.1/win32-x64-64_binding.node%E4%B8%8B%E8%BD%BD%E5%A4%B1%E8%B4%A5%EF%BC%8C%E6%89%8B%E5%8A%A8%E4%B8%8B%E8%BD%BD%E5%90%8E%E6%94%BE%E5%88%B0**&quot;node_modules&quot;%E6%96%87%E4%BB%B6%E5%A4%B9**%E4%B8%AD%EF%BC%8C%E6%96%B0%E5%BB%BA%E7%9A%84&quot;node-sass&quot;%E6%96%87%E4%BB%B6%E5%A4%B9%E4%B8%8B%EF%BC%8C%E9%87%8D%E6%96%B0%E6%89%A7%E8%A1%8C%60npm">https://github.com/sass/node-sass/releases/download/v4.14.1/win32-x64-64_binding.node下载失败，手动下载后放到**&quot;node_modules&quot;文件夹**中，新建的&quot;node-sass&quot;文件夹下，重新执行`npm</a> install`，执行成功</p>
+<ol start="3">
+<li>git push报错</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">E:\Blog\HomePage\dist&gt;git push -f origin master</span><br><span class="line">fatal: unable to access &#x27;https://github.com/mint-mints/mint-mints.github.io.git/&#x27;: OpenSSL SSL_connect: SSL_ERROR_SYSCALL in connection to github.com:443</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="博客配置"><a href="#博客配置" class="headerlink" title="博客配置"></a>博客配置</h4><blockquote>
+<p>根据项目特点,一共分为两大类 ：</p>
+<ol>
+<li><code>intro</code> 首屏</li>
+<li><code>main</code> 副屏</li>
+</ol>
+<p>相应的函数，样式，配置也是根据此标准来的。</p>
+</blockquote>
+<ol>
+<li><p>基本配置</p>
+<ul>
+<li><p>配置文件 <code>config.json</code> 中的每一项键名 , 都与相应的组件名所对应。</p>
+<p>比如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	&quot;head&quot;: &#123;</span><br><span class="line">		&quot;title&quot;: &quot;一个坏掉的番茄&quot;,</span><br><span class="line">		&quot;description&quot;: &quot;Author:SimonMa,Category:Personal Blog&quot;,</span><br><span class="line">		&quot;favicon&quot;: &quot;favicon.ico&quot;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>上面的配置信息就对应着下面 <code>layout/head.pug</code> 组件中的信息。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">head</span><br><span class="line">	title #&#123;head.title&#125;</span><br><span class="line">	meta(charset=&quot;utf-8&quot;)</span><br><span class="line">	meta(name=&quot;Description&quot; content=`$&#123;head.description&#125;`)</span><br><span class="line">	link(rel=&quot;icon&quot; href=`$&#123;head.favicon&#125;` type=&quot;image/x-icon&quot;)</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>高级配置</p>
+<h6 id="1）WebGL-Fluid-Simulation"><a href="#1）WebGL-Fluid-Simulation" class="headerlink" title="1）WebGL-Fluid-Simulation"></a>1）WebGL-Fluid-Simulation</h6><p>首页使用<a target="_blank" rel="noopener" href="https://github.com/PavelDoGreat/WebGL-Fluid-Simulation/">WebGL-Fluid-Simulation</a>作为背景。</p>
+<p>如需关闭，请设置<code>intro.background: false</code>。</p>
+<h6 id="2）supportAuthor"><a href="#2）supportAuthor" class="headerlink" title="2）supportAuthor"></a>2）supportAuthor</h6><p>配置信息默认开启了 <code>supportAuthor</code> 选项，即支持作者。</p>
+<p>所有的支持项如下：</p>
+<ol>
+<li>会在首页右上角显示 <code>章鱼猫</code></li>
+<li>控制台会打印作者的站点信息</li>
+</ol>
+<p>如需关闭，请设置<code>intro.supportAuthor: false</code>。</p>
+<h6 id="3）图标的替换"><a href="#3）图标的替换" class="headerlink" title="3）图标的替换"></a>3）图标的替换</h6><p>项目中的图标，全部来自 <a target="_blank" rel="noopener" href="https://www.iconfont.cn/">阿里巴巴矢量图标库</a></p>
+<p>替换步骤如下:</p>
+<ol>
+<li>请选择好你的图标，添加到项目后，把颜色全部调成白色。</li>
+<li>点击 Font Class 方式</li>
+<li>复制生成的链接中的内容</li>
+<li>替换 文件 <code>css/common/icon.scss</code> 中的内容 ，其中 <code>icon</code> 选择器中的内容必须保留。</li>
+<li>配置 <code>config.json</code> 文件中的相应项 <code>main.ul.*.icon</code></li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">.icon &#123;</span><br><span class="line">	display: block;</span><br><span class="line">	width: 1.5em;</span><br><span class="line">	height: 1.5em;</span><br><span class="line">	margin: 0 auto;</span><br><span class="line">	fill: currentColor;</span><br><span class="line">	font-family: &#x27;iconfont&#x27; !important;</span><br><span class="line">	font-size: inherit;</span><br><span class="line">	font-style: normal;</span><br><span class="line">	-webkit-font-smoothing: antialiased;</span><br><span class="line">	-moz-osx-font-smoothing: grayscale;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="blog页面主题"><a href="#blog页面主题" class="headerlink" title="blog页面主题"></a>blog页面主题</h3><blockquote>
+<p>使用了next主题：<a target="_blank" rel="noopener" href="https://github.com/theme-next/hexo-theme-next">https://github.com/theme-next/hexo-theme-next</a> </p>
+</blockquote>
+<h4 id="解决hexo文章图片无法显示"><a href="#解决hexo文章图片无法显示" class="headerlink" title="解决hexo文章图片无法显示"></a>解决hexo文章图片无法显示</h4><ol>
+<li><p>在根目录下配置文件<code>_config.yml</code> 中有 <code>post_asset_folder:false</code>改为<code>true</code>。这样在建立文件时，<code>Hexo</code>会自动建立一个与文章同名的文件夹。</p>
+<p>将该文章中使用的图片放到该文件夹下面。如这里放了一张test.jpg的图片。</p>
+</li>
+<li><p>git bash安装插件：（这是个修改过的插件，经测试无问题）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install https://github.com/7ym0n/hexo-asset-image --save</span><br></pre></td></tr></table></figure>
+
+<p>使用这个插件来引入图片，而不是用传统md语法相对路径的方法。</p>
+</li>
+<li><p>插入图片时用这种方式：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% asset_img test.jpg This is an test image %&#125;</span><br></pre></td></tr></table></figure>
+
+<p>其中test.jpg就是要引用的图片，后面的This is an test image是图片描述，可以自己修改。</p>
+</li>
+</ol>
+<h4 id="顶栏背景图片设置-Muse主题"><a href="#顶栏背景图片设置-Muse主题" class="headerlink" title="顶栏背景图片设置(Muse主题)"></a>顶栏背景图片设置(Muse主题)</h4><ol>
+<li><p>选择一张心仪的图片，命名为 background.jpg，放到 next的source 文件夹下的 image 文件夹内。</p>
+<p>（图片的大小可能需要根据效果调整一下）</p>
+</li>
+<li><p>找到下述位置</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo\themes\next\source\css\_schemes\Muse\_header.styl</span><br></pre></td></tr></table></figure>
+
+<p>打开_header.styl，添加下述代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.header &#123;</span><br><span class="line">  background: url(&#x27;../images/background.jpg&#x27;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>保存，重新生成网页即可。</p>
+</li>
+</ol>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/blog/tags/Hexo/" rel="tag"># Hexo</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/blog/2021/11/30/Python%E5%91%BD%E5%90%8D%E8%A7%84%E5%88%99/" rel="prev" title="Python命名规则">
+      <i class="fa fa-chevron-left"></i> Python命名规则
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/blog/2021/12/01/hexo%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" rel="next" title="hexo常用命令">
+      hexo常用命令 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2"><span class="nav-number">1.</span> <span class="nav-text">搭建个人博客</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA"><span class="nav-number">1.1.</span> <span class="nav-text">博客搭建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A1%B5%E9%9D%A2%E4%BC%98%E5%8C%96"><span class="nav-number">1.2.</span> <span class="nav-text">页面优化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#HomePage%E4%B8%BB%E9%A2%98"><span class="nav-number">1.2.1.</span> <span class="nav-text">HomePage主题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA-1"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">博客搭建</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8D%9A%E5%AE%A2%E9%85%8D%E7%BD%AE"><span class="nav-number">1.2.1.2.</span> <span class="nav-text">博客配置</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#1%EF%BC%89WebGL-Fluid-Simulation"><span class="nav-number">1.2.1.2.0.1.</span> <span class="nav-text">1）WebGL-Fluid-Simulation</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#2%EF%BC%89supportAuthor"><span class="nav-number">1.2.1.2.0.2.</span> <span class="nav-text">2）supportAuthor</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#3%EF%BC%89%E5%9B%BE%E6%A0%87%E7%9A%84%E6%9B%BF%E6%8D%A2"><span class="nav-number">1.2.1.2.0.3.</span> <span class="nav-text">3）图标的替换</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#blog%E9%A1%B5%E9%9D%A2%E4%B8%BB%E9%A2%98"><span class="nav-number">1.2.2.</span> <span class="nav-text">blog页面主题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3hexo%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">解决hexo文章图片无法显示</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%A1%B6%E6%A0%8F%E8%83%8C%E6%99%AF%E5%9B%BE%E7%89%87%E8%AE%BE%E7%BD%AE-Muse%E4%B8%BB%E9%A2%98"><span class="nav-number">1.2.2.2.</span> <span class="nav-text">顶栏背景图片设置(Muse主题)</span></a></li></ol></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">mint-mints</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/blog/archives/">
+        
+          <span class="site-state-item-count">26</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/blog/categories/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/blog/tags/">
+          
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">mint-mints</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/blog/lib/anime.min.js"></script>
+  <script src="/blog/lib/velocity/velocity.min.js"></script>
+  <script src="/blog/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/blog/js/utils.js"></script>
+
+<script src="/blog/js/motion.js"></script>
+
+
+<script src="/blog/js/schemes/muse.js"></script>
+
+
+<script src="/blog/js/next-boot.js"></script>
+
+<script src="/blog/js/bookmark.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/blog/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
